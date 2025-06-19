@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-body bg-grey section custom-scroll">
+        <div
+          class="section-wrap section pt-120 pt-lg-80 pt-md-80 pt-sm-80 pt-xs-50 pb-120 pb-lg-80 pb-md-80 pb-sm-80 pb-xs-50"
+        >
+          <div class="container">
+            <div class="row">
+              <!-- Portfolio Image -->
+              <div
+                class="portfolio-details-image col-lg-7 col-12 mb-sm-30 mb-xs-30"
+              >
+                <img
+                  src="{% static 'images/products/product2.png' %}"
+                  alt="UAV in action"
+                />
+                <img
+                  src="{% static 'images/products/2.png' %}"
+                  alt="Precision drone surveying"
+                />
+              </div>
+
+              <!-- Portfolio Content -->
+              <div class="portfolio-details-content col-lg-5 col-12">
+                <a href="#" class="category">
+                  <svg class="icon icon-drone" viewBox="0 0 24 24">
+                    <use xlink:href="#icon-drone"></use>
+                  </svg>
+                  Aerial Robotics
+                </a>
+
+                <h1 class="title">Unmanned Aerial Vehicles (UAVs)</h1>
+
+                <p>
+                  Leafloat UAVs deliver intelligent flight for precision
+                  operations in agriculture, surveying, and emergency response.
+                  With multi-sensor payloads, AI analytics, and autonomous
+                  navigation, our drones help capture actionable insights from
+                  the sky in real time.
+                </p>
+
+                <!-- Project Info -->
+                <ul class="project-info">
+                  <li>
+                    <span>Client:</span> AgriTech, Construction, Rescue Agencies
+                  </li>
+                  <li><span>Date:</span> 2024 Series</li>
+                  <li>
+                    <span>Website:</span>
+                    <a href="#">leafloat.com/products/uavs</a>
+                  </li>
+                  <li>
+                    <span>Capabilities:</span>
+                    <a href="#">LiDAR</a>
+                    <a href="#">Multispectral Imaging</a>
+                    <a href="#">Autonomous Flight</a>
+                    <a href="#">AI Analytics</a>
+                  </li>
+                </ul>
+
+                <!-- Project Share -->
+                <div class="project-share">
+                  <span>Share:</span>
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+
+                <!-- Project Nav -->
+                <div class="project-nav">
+                  <a href="#" class="prev-project">
+                    <span>prev product</span> Robodogs
+                  </a>
+                  <a href="#" class="next-project">
+                    <span>next product</span> UGVs
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Body End -->
+{% endblock %}

@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-body section custom-scroll">
+
+            <div class="section-wrap section pt-120 pt-lg-80 pt-md-80 pt-sm-0 pt-xs-0 pb-70 pb-lg-30 pb-md-30 pb-sm-30 pb-xs-0">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-xl-9 col-lg-8 col-12 order-1 order-lg-2 pl-65 pl-md-15 pl-sm-15 pl-xs-15 mb-50">
+
+                            <!-- Blog Item Details -->
+                            <div class="blog-item-details">
+
+                                <!-- Image -->
+                                <div class="blog-image"><img src="{% static 'images/blog/blog-single.jpg' %}" alt=""></div>
+
+                                <!-- Content -->
+                                <div class="blog-content">
+
+                                    <!-- Title -->
+                                    <h2 class="blog-title">HOW I IMPROVE DESIGN ONE EASY</h2>
+
+                                    <!-- Meta -->
+                                    <ul class="blog-meta">
+                                        <li><a href="#"><i class="fa fa-user"></i>Admin</a></li>
+                                        <li><a href="#"><i class="fa fa-comments"></i>Comments ( 04 )</a></li>
+                                    </ul>
+
+                                    <!-- Description -->
+                                    <div class="blog-desc">
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour lebmid. There are many variations of passages of Lorem Ipsum available,
+                                            but the majority have suffered alteration in some form, by injected humour lebmid</p>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour lebmid. There are many variations of passages of Lorem Ipsum available,
+                                            but the majority have suffered lebmid</p>
+                                        <blockquote>
+                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable or randomised.
+                                                words which don't look even slightly</p>
+                                        </blockquote>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour lebmid. There are many variations of passages of Lorem Ipsum available,
+                                            but the majority have suffered lebmid</p>
+                                    </div>
+
+                                </div>
+
+                                <!-- Footer-->
+                                <div class="blog-footer col-12 pl-0 pr-0 fix">
+                                    <div class="row">
+
+                                        <!-- Socail -->
+                                        <div class="blog-social-share d-flex justify-content-center col-md-6 col-12 order-1 order-md-2 mb-xs-20">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                        </div>
+
+                                        <!-- Post Nav -->
+                                        <div class="d-flex justify-content-start col-md-3 col-6 order-2 order-md-1">
+                                            <a href="#" class="post-nav old-post"><i class="fa fa-long-arrow-left"></i>Older</a>
+                                        </div>
+
+                                        <!-- Post Nav -->
+                                        <div class="d-flex justify-content-end col-md-3 col-6 order-3">
+                                            <a href="#" class="post-nav new-post"><i class="fa fa-long-arrow-right"></i>new</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Comment Wrap -->
+                            <div class="comment-wrap">
+
+                                <h3>Comments</h3>
+
+                                <!-- Comment List -->
+                                <ul class="comment-list">
+                                    <li>
+                                        <!-- Single Comment -->
+                                        <div class="single-comment">
+                                            <div class="image"><img src="{% static 'images/blog/comment-1.jpg' %}" alt=""></div>
+                                            <div class="content fix">
+                                                <h5>Andrew Cruz</h5>
+                                                <span>july 25, 2019 at 2:35 am</span>
+                                                <p>random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                                            </div>
+                                            <div class="reply"><a href="#"><i class="fa fa-reply"></i>reply</a></div>
+                                        </div>
+
+                                        <ul class="child-comment">
+                                            <li>
+                                                <!-- Single Comment -->
+                                                <div class="single-comment">
+                                                    <div class="image"><img src="{% static 'images/blog/comment-2.jpg' %}" alt=""></div>
+                                                    <div class="content fix">
+                                                        <h5>Frank Foster</h5>
+                                                        <span>july 31, 2019 at 4:39 am</span>
+                                                        <p>random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                                                    </div>
+                                                    <div class="reply"><a href="#"><i class="fa fa-reply"></i>reply</a></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                    <li>
+                                        <!-- Single Comment -->
+                                        <div class="single-comment">
+                                            <div class="image"><img src="{% static 'images/blog/comment-3.jpg' %}" alt=""></div>
+                                            <div class="content fix">
+                                                <h5>Bruce Burke</h5>
+                                                <span>july 15, 2019 at 2:39 am</span>
+                                                <p>random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                                            </div>
+                                            <div class="reply"><a href="#"><i class="fa fa-reply"></i>reply</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <h3>Leave a comment</h3>
+
+                                <!-- Comment Form -->
+                                <div class="comment-form">
+                                    <form action="#">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12 mb-30"><input type="text" name="name" placeholder="Name"></div>
+                                            <div class="col-md-6 col-12 mb-30"><input type="email" name="email" placeholder="Email"></div>
+                                            <div class="col-12 mb-30"><textarea name="message" placeholder="Message"></textarea></div>
+                                            <div class="col-12"><input type="submit" value="post now"></div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-xl-3 col-lg-4 col-12 order-2 order-lg-1 mb-50">
+
+                            <!-- Sidebar -->
+                            <div class="sidebar">
+                                <div class="sidebar-search">
+                                    <form action="#">
+                                        <input type="text" placeholder="Search">
+                                        <button><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Sidebar -->
+                            <div class="sidebar">
+
+                                <h3 class="title">ABOUT ME</h3>
+
+                                <div class="sidebar-about">
+                                    <p>There are many variations of passages of Lorem Ipsum available, alteration in some form, by injected humour lebmid</p>
+                                </div>
+                            </div>
+
+                            <!-- Sidebar -->
+                            <div class="sidebar">
+
+                                <h3 class="title">Categories</h3>
+
+                                <ul class="sidebar-list">
+                                    <li><a href="#">Corporate</a></li>
+                                    <li><a href="#">Graphic Design</a></li>
+                                    <li><a href="#">Creative</a></li>
+                                    <li><a href="#">Photoshop</a></li>
+                                </ul>
+
+                            </div>
+
+                            <!-- Sidebar -->
+                            <div class="sidebar">
+
+                                <h3 class="title">Newest post</h3>
+
+                                <ul class="sidebar-post">
+                                    <li>
+                                        <a href="#">Any one can join with us if you</a>
+                                        <span>23 june 2019</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Design is our passion</a>
+                                        <span>03 jan 2019</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">if you want to do this</a>
+                                        <span>18 julu 2019</span>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                            <!-- Sidebar -->
+                            <div class="sidebar">
+
+                                <h3 class="title">Tags</h3>
+
+                                <div class="sidebar-tags">
+                                    <a href="#">Corporate</a>
+                                    <a href="#">Graphic Design</a>
+                                    <a href="#">Photoshop</a>
+                                </div>
+
+                            </div>
+
+                            <!-- Sidebar -->
+                            <div class="sidebar">
+
+                                <div class="sidebar-banner">
+                                    <a href="#"><img src="{% static 'images/banner/banner-1.jpg' %}" alt=""></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Content Body End -->
+
+    </div>
+
+    <!-- JS
+============================================ -->
+
+    <!-- jQuery JS -->
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <!-- Popper JS -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Plugins JS -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Ajax Mail -->
+    <script src="{% static 'js/ajax-mail.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
