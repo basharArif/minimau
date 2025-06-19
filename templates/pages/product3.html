@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-body bg-grey section custom-scroll">
+        <div
+          class="section-wrap section pt-120 pt-lg-80 pt-md-80 pt-sm-80 pt-xs-50 pb-120 pb-lg-80 pb-md-80 pb-sm-80 pb-xs-50"
+        >
+          <div class="container">
+            <div class="row">
+              <!-- Portfolio Image -->
+              <div
+                class="portfolio-details-image col-lg-7 col-12 mb-sm-30 mb-xs-30"
+              >
+                <img
+                  src="{% static 'images/products/uavs.png' %}"
+                  alt="UGV in rugged terrain"
+                />
+                <img
+                  src="{% static 'images/products/uavs.png' %}"
+                  alt="UGV operating on construction site"
+                />
+              </div>
+
+              <!-- Portfolio Content -->
+              <div class="portfolio-details-content col-lg-5 col-12">
+                <a href="#" class="category">
+                  <svg class="icon icon-ugv" viewBox="0 0 24 24">
+                    <use xlink:href="#icon-ugv"></use>
+                  </svg>
+                  Ground Robotics
+                </a>
+
+                <h1 class="title">Unmanned Ground Vehicles (UGVs)</h1>
+
+                <p>
+                  Leafloat UGVs are rugged, intelligent ground robots built to
+                  operate in extreme conditions across agriculture,
+                  construction, and warehousing. Equipped with autonomous
+                  navigation, customizable payloads, and real-time task control,
+                  they automate field-level operations with unmatched precision.
+                </p>
+
+                <!-- Project Info -->
+                <ul class="project-info">
+                  <li>
+                    <span>Client:</span> Smart Farming & Construction Firms
+                  </li>
+                  <li><span>Date:</span> 2024 Launch</li>
+                  <li>
+                    <span>Website:</span>
+                    <a href="#">leafloat.com/products/ugvs</a>
+                  </li>
+                  <li>
+                    <span>Capabilities:</span>
+                    <a href="#">RTK Navigation</a>
+                    <a href="#">Obstacle Avoidance</a>
+                    <a href="#">Payload Adaptability</a>
+                    <a href="#">Remote Monitoring</a>
+                  </li>
+                </ul>
+
+                <!-- Project Share -->
+                <div class="project-share">
+                  <span>Share:</span>
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+
+                <!-- Project Nav -->
+                <div class="project-nav">
+                  <a href="#" class="prev-project">
+                    <span>prev product</span> UAVs
+                  </a>
+                  <a href="#" class="next-project">
+                    <span>next product</span> Non-GPS Navigation
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Body End -->
+{% endblock %}
