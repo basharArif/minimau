@@ -25,11 +25,6 @@ urlpatterns = [
         name="team",
     ),
     path(
-        "team-dark/",
-        StaticTemplateView.as_view(template_name="pages/team-dark.html"),
-        name="team-dark",
-    ),
-    path(
         "blog/",
         StaticTemplateView.as_view(template_name="pages/blog-three-column.html"),  # noqa: E501
         name="blog",
