@@ -56,9 +56,7 @@ ASGI_APPLICATION = "sitecore.asgi.application"
 DATABASES = {"default": env.db(default=f'sqlite:///{BASE_DIR / "db.sqlite3"}')}
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"  # noqa: E501
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},  # noqa: E501
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},  # noqa: E501
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},  # noqa: E501
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},  # noqa: E501

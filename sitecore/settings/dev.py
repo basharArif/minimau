@@ -2,7 +2,7 @@ from .base import *  # noqa: F401,F403,F405
 
 DEBUG = True
 
-INSTALLED_APPS = INSTALLED_APPS + ['debug_toolbar']  # noqa: F405
+INSTALLED_APPS = INSTALLED_APPS + ["debug_toolbar"]  # noqa: F405
 MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ] + MIDDLEWARE  # noqa: F405
