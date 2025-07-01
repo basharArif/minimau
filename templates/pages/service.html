@@ -22,7 +22,7 @@
 
             {% for service in services %}
             <div class="col-md-6 col-lg-4 mb-40">
-              <a href="{% url 'service_detail' url_slug=service.url_slug %}" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
+              <a href="{% url 'pages:service_detail' url_slug=service.url_slug %}" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
                 <img src="{% static service.image %}" alt="{{ service.image_alt_text }}" class="img-fluid rounded mb-3">
                 <h4 class="h5 fw-bold">{{ service.name }}</h4>
                 <p class="text-muted">{{ service.short_description }}</p>

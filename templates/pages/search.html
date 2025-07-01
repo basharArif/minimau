@@ -12,16 +12,43 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10 col-12">
                     <div class="search-form-wrap text-center">
-                        <form action="#" method="get">
+                        <form action="{% url 'pages:search' %}" method="get">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search..." name="q">
+                                <input type="text" class="form-control" placeholder="Search..." name="q" value="{{ query }}">
                                 <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
                             </div>
                         </form>
                     </div>
                     <div class="search-results mt-5">
-                        <!-- Search results will be displayed here -->
-                        <p class="text-muted text-center">Enter your query above to find relevant content.</p>
+                        {% if query %}
+                            <h3 class="text-center">Results for "{{ query }}"</h3>
+                            {% if results %}
+                                <ul class="list-group">
+                                    {% for result in results %}
+                                        <li class="list-group-item">
+                                            <h5><a href="{{ result.get_absolute_url }}">
+                                                {% if result.title %}
+                                                    {{ result.title }}
+                                                {% else %}
+                                                    {{ result.name }}
+                                                {% endif %}
+                                            </a></h5>
+                                            <p>
+                                                {% if result.short_description %}
+                                                    {{ result.short_description|truncatewords:30 }}
+                                                {% elif result.content %}
+                                                    {{ result.content|truncatewords:30 }}
+                                                {% endif %}
+                                            </p>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <p class="text-muted text-center">No results found.</p>
+                            {% endif %}
+                        {% else %}
+                            <p class="text-muted text-center">Enter your query above to find relevant content.</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>

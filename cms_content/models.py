@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class TimeStampBaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created At")
@@ -59,6 +60,9 @@ class Product(TimeStampBaseModel):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('pages:product_detail', kwargs={'url_slug': self.url_slug})
+
 class ProductImage(TimeStampBaseModel):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images', verbose_name="Product")
     image = models.ImageField(upload_to='product_carousel/', verbose_name="Image")
@@ -114,6 +118,9 @@ class Service(TimeStampBaseModel):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('pages:service_detail', kwargs={'url_slug': self.url_slug})
 
 class Feature(TimeStampBaseModel):
     title = models.CharField(max_length=255, verbose_name="Feature Title")
@@ -174,6 +181,9 @@ class CaseStudy(TimeStampBaseModel):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse('cms_content:case_studies')
+
 
 class WhitePaper(TimeStampBaseModel):
     title = models.CharField(max_length=255, verbose_name="Title")
@@ -189,6 +199,9 @@ class WhitePaper(TimeStampBaseModel):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('cms_content:white_papers')
 
 
 class Blog(TimeStampBaseModel):
@@ -208,3 +221,7 @@ class Blog(TimeStampBaseModel):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('cms_content:blog_detail', kwargs={'slug': self.url_slug})
+
