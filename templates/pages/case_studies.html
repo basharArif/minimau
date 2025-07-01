@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Case Studies</h1>
+{% for case_study in case_studies %}
+    <h2>{{ case_study.title }}</h2>
+{% endfor %}
+{% endblock %}

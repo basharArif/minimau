@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ product.name }} - Leafloat Robotics{% endblock %}
+
+{% block content %}
+<style>
+    .product-detail-section {
+        padding: 120px 0;
+        background-color: #0a0a0a;
+        color: #e0e0e0;
+        font-family: 'Roboto Mono', monospace;
+    }
+    .product-detail-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    .product-gallery-container {
+        flex: 1 1 500px;
+    }
+    .product-info-container {
+        flex: 1 1 500px;
+    }
+    .product-name {
+        font-size: 4rem;
+        font-weight: 700;
+        color: #00aaff;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+    .product-short-description {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        color: #b0b0b0;
+    }
+    .product-main-description,
+    .product-conclusion {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+    .product-section {
+        margin-top: 40px;
+    }
+    .product-section-title {
+        font-size: 2rem;
+        color: #00aaff;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #00aaff;
+        padding-bottom: 10px;
+    }
+    .product-section-item {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+    }
+    .product-section-item::before {
+        content: '>>';
+        position: absolute;
+        left: 0;
+        color: #00aaff;
+    }
+    .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #00aaff;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        margin-top: 20px;
+    }
+    .cta-button:hover {
+        background-color: #0088cc;
+        transform: scale(1.05);
+    }
+
+    /* Carousel styles */
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    }
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .carousel-item {
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+    .carousel-item img {
+        width: 100%;
+        display: block;
+    }
+    .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        z-index: 100;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+</style>
+
+<div class="product-detail-section">
+    <div class="container product-detail-container">
+        <div class="product-gallery-container">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{ product.hero_image.url }}" alt="{{ product.hero_image_alt_text }}">
+                    </div>
+                    {% for image in product_images %}
+                    <div class="carousel-item">
+                        <img src="{{ image.image.url }}" alt="{{ image.alt_text }}">
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control prev" onclick="move(-1)">&#10094;</button>
+                <button class="carousel-control next" onclick="move(1)">&#10095;</button>
+            </div>
+        </div>
+        <div class="product-info-container">
+            <h1 class="product-name">{{ product.name }}</h1>
+            <p class="product-short-description">{{ product.short_description }}</p>
+            <div class="product-main-description">
+                {{ product.main_description|safe }}
+            </div>
+
+            {% for section in product_sections %}
+            <div class="product-section">
+                <h2 class="product-section-title">{{ section.title }}</h2>
+                {% for item in section.items_list %}
+                <div class="product-section-item">{{ item.text|safe }}</div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+
+            <div class="product-conclusion">
+                {{ product.conclusion_text|safe }}
+            </div>
+            <a href="{% url 'pages:contact' %}" class="cta-button">Request a Quote</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+
+    function move(direction) {
+        items[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + direction + totalItems) % totalItems;
+        items[currentIndex].classList.add('active');
+        document.querySelector('.carousel-inner').style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Set the first item as active initially
+    if (totalItems > 0) {
+        items[0].classList.add('active');
+    }
+</script>
+{% endblock %}

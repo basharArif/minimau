@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-body bg-grey section custom-scroll">
+        <div class="product-hero-title section pt-120 pb-60 text-center" style="background-image: url({% static 'images/bg/title-bg-1.png' %}); background-size: cover; background-position: center;">
+          <div class="container">
+            <h1 class="display-4 fw-bold text-dark">Crowd Monitoring</h1>
+          </div>
+        </div>
+        <div
+          class="section-wrap section pt-120 pt-lg-80 pt-md-80 pt-sm-80 pt-xs-50 pb-120 pb-lg-80 pb-md-80 pb-sm-80 pb-xs-50"
+        >
+          <div class="container">
+            <div class="row">
+              <!-- Service Details -->
+              <div class="col-lg-12 col-12">
+                <div class="row">
+                  <!-- Service Image Column (Placeholder for now, can be added later if suitable image found) -->
+                  <div class="col-lg-7 col-12 mb-sm-30 mb-xs-30">
+                    <img src="{% static 'images/products/product6.png' %}" alt="Crowd Monitoring" class="img-fluid rounded mb-4">
+                  </div>
+
+                  <!-- Service Content Column -->
+                  <div class="col-lg-5 col-12">
+                    <p>Leafloat Robotics’ AI-powered crowd monitoring system uses computer vision and real-time analytics to manage crowd density in high-traffic areas like malls, event halls, and airports, ensuring safety and optimizing space utilization.</p>
+
+                    <h3 class="mt-4">Key Features</h3>
+                    <ul>
+                      <li><strong>Real-Time Crowd Density Analysis</strong>: AI-driven video processing and heatmap visualization.</li>
+                      <li><strong>Capacity Monitoring & Compliance</strong>: Automated alerts for overcrowding and regulatory compliance.</li>
+                      <li><strong>Behavioral Analytics</strong>: Tracks movement patterns and predicts congestion points.</li>
+                      <li><strong>Security & Anomaly Detection</strong>: Identifies unusual behavior or security threats.</li>
+                      <li><strong>Data-Driven Insights</strong>: Dashboard visualization and forecasting for peak traffic.</li>
+                    </ul>
+
+                    <h3 class="mt-4">Applications</h3>
+                    <ul>
+                      <li><strong>Malls & Shopping Centers</strong>: Optimizes foot traffic and enhances safety.</li>
+                      <li><strong>Event Halls & Stadiums</strong>: Manages crowd flow during large events.</li>
+                      <li><strong>Airports & Transportation Hubs</strong>: Reduces wait times and enhances security.</li>
+                    </ul>
+
+                    <h3 class="mt-4">Competitive Advantages</h3>
+                    <ul>
+                      <li>High-precision real-time crowd analysis.</li>
+                      <li>Reduces manual surveillance efforts.</li>
+                      <li>Scalable for small venues to large public spaces.</li>
+                      <li>Ensures safety and regulatory compliance.</li>
+                    </ul>
+
+                    <h3 class="mt-4">Future Developments</h3>
+                    <ul>
+                      <li>AI-assisted evacuation planning for emergencies.</li>
+                      <li>Integration with smart city infrastructure.</li>
+                      <li>Enhanced facial recognition and behavior analysis.</li>
+                    </ul>
+
+                    <p class="mt-4">Our crowd monitoring system revolutionizes foot traffic management, ensuring safety and efficiency with real-time analytics.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

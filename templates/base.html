@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'css/plugins.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/helper.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/modern.css' %}"/>
     <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
 </head>
 <body>
@@ -30,36 +31,35 @@
                 <div class="header-menu d-lg-flex justify-content-center col-lg-8 d-none">
                     <nav class="main-menu">
                         <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="{% url 'pages:home' %}">Home</a></li>
+                            <li><a href="{% url 'pages:about' %}">About Us</a></li>
                             <li class="menu-item-has-children">
                                 <a href="#">Products</a>
+                                {% load product_tags %}
+                                {% get_products as products %}
                                 <ul class="sub-menu">
-                                    <li><a href="/products/1/">Robodogs</a></li>
-                                    <li><a href="/products/2/">Unmanned Aerial Vehicles (UAVs)</a></li>
-                                    <li><a href="/products/3/">Unmanned Ground Vehicles (UGVs)</a></li>
-                                    <li><a href="/products/4/">Non-GPS Navigation</a></li>
-                                    <li><a href="/products/5/">Nature Digitization</a></li>
-                                    <li><a href="/products/6/">Crowd Monitoring</a></li>
+                                    {% for product in products %}
+                                    <li><a href="{% url 'pages:product_detail' product.url_slug %}">{{ product.name }}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </li>
-                            <li><a href="/service/">Services</a></li>
+                            <li><a href="{% url 'pages:service' %}">Services</a></li>
                             <li class="menu-item-has-children">
                                 <a href="#">Resources</a>
                                 <ul class="sub-menu">
-                                    <li><a href="/blog/">Blog</a></li>
-                                    <li><a href="/blog/case-studies/">Case Studies</a></li>
-                                    <li><a href="/blog/white-papers/">White Papers & Guides</a></li>
+                                    <li><a href="{% url 'pages:blog' %}">Blog</a></li>
+                                    <li><a href="{% url 'cms_content:case_studies' %}">Case Studies</a></li>
+                                    <li><a href="{% url 'cms_content:white_papers' %}">White Papers & Guides</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/contact/">Contact</a></li>
+                            <li><a href="{% url 'pages:contact' %}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="header-social d-flex align-items-center justify-content-end col-lg-2 col-6">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-facebook-f"></i></a>
                     <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-in"></i></a>
                     <button class="side-header-toggle d-block d-lg-none ml-20"><span></span></button>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                                 <li><a href="/products/4/">Non-GPS Navigation</a></li>
                                 <li><a href="/products/5/">Nature Digitization</a></li>
                                 <li><a href="/products/6/">Crowd Monitoring</a></li>
-                                <li><a href="#">AI-Powered Restaurant Management System</a></li>
+                                <li><a href="/products/7/">AI-Powered Restaurant Management System</a></li>
                             </ul>
                         </li>
                         <li><a href="/service/">Services</a></li>
@@ -115,9 +115,9 @@
                     <p><a href="#">info@example.com</a></p>
                 </div>
                 <div class="side-header-social">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-facebook-f"></i></a>
                     <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-in"></i></a>
                 </div>
                 <div class="side-header-copyright">
                     <p>&copy;
@@ -145,7 +145,6 @@
                         Leafloat Robotics. ALL RIGHT RESERVED
                     </p>
                 </div>
-
                 <div class="col-lg-4 col-12 order-lg-2 order-1 mb-sm-15 mb-xs-15">
                     <div class="portfolio-slider-5-nav"></div>
                 </div>

@@ -4,9 +4,11 @@ __pycache__/
 
 # Django
 /media/
+db.sqlite3
 
 # Environment
 .env*
+.venv/
 
 # OS
 .DS_Store
@@ -17,4 +19,15 @@ venv/
 # Testing
 htmlcov/
 .coverage
+
+# IDE
+.idea/
+
+# Caches
+.pytest_cache/
+.ruff_cache/
+
+# Logs
+logs/
+*.log
 

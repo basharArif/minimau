@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-body bg-grey section custom-scroll">
+    <div class="product-hero-title section pt-120 pb-60 text-center" style="background-image: url({% static 'images/bg/blog-hero.png' %}); background-size: cover; background-position: center;">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-dark">Case Studies</h1>
+        </div>
+    </div>
+    <div class="section-wrap section pt-120 pt-lg-80 pt-md-80 pt-sm-80 pt-xs-50 pb-120 pb-lg-80 pb-md-80 pb-sm-80 pb-xs-50">
+        <div class="container">
+            <div class="row">
+                {% for case_study in case_studies %}
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ case_study.image.url }}" alt="{{ case_study.image_alt_text }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ case_study.title }}</h5>
+                            <p class="card-text">{{ case_study.short_description }}</p>
+                            <a href="{% url 'cms_content:case_studies' %}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12 text-center">
+                    <p class="lead">No case studies available at the moment. Please check back later.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

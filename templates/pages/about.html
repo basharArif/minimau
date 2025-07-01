@@ -2,172 +2,80 @@
 {% load static %}
 {% block content %}
 <div class="content-body bg-grey section custom-scroll">
-        <!-- Hero Statement -->
-        <div class="section-wrap section pt-120 pb-60">
+        <!-- About Leafloat Robotics Hero -->
+        {% if hero_content %}
+        <div class="section-wrap section pt-120 pb-120 text-white text-center" style="background-image: url({% static hero_content.background_image %}); background-size: cover; background-position: center;">
           <div class="container">
             <div class="row">
-              <div class="col-lg-10 offset-lg-1 text-center">
-                <h2 class="block-title">We Build the Future of Robotics</h2>
-                <p class="mt-20">
-                  At Leafloat Robotics, we blend AI, autonomy, and deep industry
-                  knowledge to revolutionize how machines work in the real
-                  world. Since 2020, we’ve pushed boundaries in agriculture,
-                  security, logistics, and more.
+              <div class="col-lg-10 offset-lg-1">
+                <h2 class="block-title display-4 fw-bold text-dark">{{ hero_content.title }}</h2>
+                <p class="lead mt-20">
+                  {{ hero_content.subtitle }}
                 </p>
-                <img
-                  src="/static/images/about/banner.png"
-                  alt="Robotics Lab"
-                  class="img-fluid mt-40 rounded"
-                />
               </div>
             </div>
           </div>
         </div>
+        {% endif %}
 
-        <!-- Who We Are -->
-        <div class="section-wrap section pt-60 pb-120">
-          <div class="container">
-            <div class="row align-items-center">
-              <div
-                class="about-image col-lg-6 col-12 mb-md-30 mb-sm-30 mb-xs-30"
-              >
-                <img
-                  src="/static/images/about/about.png"
-                  alt="AI Robotics"
-                  class="img-fluid rounded"
-                />
-              </div>
-              <div class="about-content col-lg-6 col-12">
-                <h3 class="block-title">Who We Are</h3>
-                <p>
-                  We are a Malaysia-based robotics company redefining
-                  automation. From intelligent UAVs to AI-driven Robodogs, our
-                  systems serve industries with precision and purpose. Founded
-                  in 2020, Leafloat Robotics is committed to intelligent,
-                  sustainable transformation.
-                </p>
-                <ul class="personal-info mt-20">
-                  <li><span>Founded:</span> 2020, Kuala Lumpur</li>
-                  <li>
-                    <span>Industries:</span> Agriculture, Security, Logistics,
-                    Retail
-                  </li>
-                  <li>
-                    <span>Specialties:</span> AI, Robotics, Autonomy, Sensor
-                    Fusion
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- What We Do Icons -->
+        <!-- What We Do Cards -->
         <div class="section-wrap section bg-light-grey pt-100 pb-100">
           <div class="container">
             <h3 class="block-title text-center mb-60">What We Do</h3>
             <div class="row text-center">
+              {% for capability in capabilities %}
               <div class="col-md-4 mb-40">
-                <img
-                  src="https://images.unsplash.com/photo-1619025874295-57f96c7a165d?auto=format&fit=crop&w=400&q=80"
-                  class="mb-20 rounded-circle"
-                  width="100"
-                  alt="Autonomous Drone"
-                />
-                <h5>Autonomous Robotics</h5>
-                <p>Ground and aerial robots for site automation</p>
+                <div class="card h-100 shadow-sm rounded p-4">
+                  <div class="card-body text-center">
+                    <div class="mb-20 mx-auto" style="width: 100px; height: 100px; background-image: url({% static capability.image %}); background-size: cover; background-position: center; border-radius: 50%;"></div>
+                    <h5>{{ capability.title }}</h5>
+                    <p>{{ capability.description }}</p>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-4 mb-40">
-                <img
-                  src="https://images.unsplash.com/photo-1581094278330-10e3371b85b6?auto=format&fit=crop&w=400&q=80"
-                  class="mb-20 rounded-circle"
-                  width="100"
-                  alt="AI Brain Concept"
-                />
-                <h5>AI Integration</h5>
-                <p>
-                  Real-time intelligence from camera, LiDAR, RTK & edge compute
-                </p>
-              </div>
-              <div class="col-md-4 mb-40">
-                <img
-                  src="https://images.unsplash.com/photo-1619441207972-5e8793c57d6c?auto=format&fit=crop&w=400&q=80"
-                  class="mb-20 rounded-circle"
-                  width="100"
-                  alt="Underground Navigation"
-                />
-                <h5>Non-GPS Navigation</h5>
-                <p>SLAM + inertial systems for tunnels, forests & warehouses</p>
-              </div>
+              {% endfor %}
             </div>
           </div>
         </div>
 
         <!-- Mission & Vision -->
-        <div class="section-wrap section pt-80 pb-80">
+        {% if mission_content and vision_content %}
+        <div class="section-wrap section pt-80 pb-80 text-white" style="background-image: url({% static mission_content.background_image %}); background-size: cover; background-position: center;">
           <div class="container">
             <div class="row">
               <div class="col-lg-6">
-                <h3 class="block-title">Our Mission</h3>
+                <h3 class="block-title text-white">{{ mission_content.title }}</h3>
                 <p>
-                  To empower organizations with intelligent robotic systems that
-                  reduce risk, enhance productivity, and promote sustainable
-                  innovation across sectors.
+                  {{ mission_content.body_text }}
                 </p>
               </div>
               <div class="col-lg-6">
-                <h3 class="block-title">Our Vision</h3>
+                <h3 class="block-title text-white">{{ vision_content.title }}</h3>
                 <p>
-                  To lead the global transformation of industries through
-                  autonomous robotics and applied artificial intelligence —
-                  reshaping the future of work.
+                  {{ vision_content.body_text }}
                 </p>
               </div>
             </div>
           </div>
         </div>
+        {% endif %}
 
-        <!-- Why Leafloat -->
+        <!-- Why Leafloat - Feature Blocks -->
         <div class="section-wrap section bg-grey pt-80 pb-80">
           <div class="container">
             <h3 class="block-title text-center mb-60">
               Why Choose Leafloat Robotics
             </h3>
             <div class="row">
-              <div class="col-md-6 mb-30">
-                <div class="single-skill">
-                  <span>Expertise in Autonomy</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 95%"></div>
-                  </div>
-                </div>
-                <div class="single-skill">
-                  <span>Customizable AI Models</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 88%"></div>
-                  </div>
-                </div>
-                <div class="single-skill">
-                  <span>Sustainability Focused</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 90%"></div>
-                  </div>
+              {% for feature in features %}
+              <div class="col-md-6 col-lg-4 mb-30">
+                <div class="feature-box text-center p-4 rounded shadow-sm h-100">
+                  <i class="{{ feature.icon_class }} text-primary mb-3"></i>
+                  <h5>{{ feature.title }}</h5>
+                  <p>{{ feature.description }}</p>
                 </div>
               </div>
-              <div class="col-md-6 mb-30">
-                <div class="single-skill">
-                  <span>Real-Time Sensor Fusion</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 92%"></div>
-                  </div>
-                </div>
-                <div class="single-skill">
-                  <span>Ongoing Training & Support</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 94%"></div>
-                  </div>
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
         </div>
@@ -176,46 +84,33 @@
         <div class="section-wrap section pt-80 pb-80">
           <div class="container">
             <h3 class="block-title text-center mb-60">Our Journey</h3>
-            <div class="row text-center">
-              <div class="col-md-2 offset-md-1 mb-30">
-                <h6 class="text-dark">2020</h6>
-                <p class="small">Founded in Malaysia</p>
+            <div class="row text-center justify-content-center">
+              {% for event in timeline_events %}
+              <div class="col-md-3 mb-30">
+                <h6 class="text-dark"><strong>{{ event.year }}</strong></h6>
+                <p class="small">{{ event.description }}</p>
               </div>
-              <div class="col-md-2 mb-30">
-                <h6 class="text-dark">2021</h6>
-                <p class="small">Launched UAVs for agriculture</p>
-              </div>
-              <div class="col-md-2 mb-30">
-                <h6 class="text-dark">2022</h6>
-                <p class="small">Introduced Robodog platform</p>
-              </div>
-              <div class="col-md-2 mb-30">
-                <h6 class="text-dark">2023</h6>
-                <p class="small">Hospitality & retail AI solutions</p>
-              </div>
-              <div class="col-md-2 mb-30">
-                <h6 class="text-dark">2024</h6>
-                <p class="small">Nature Digitization, GPS-Free Nav</p>
-              </div>
+              {% endfor %}
             </div>
           </div>
         </div>
 
         <!-- Call to Action -->
+        {% if cta_content %}
         <div class="section-wrap section bg-dark text-white pt-100 pb-100">
           <div class="container text-center">
-            <h3 class="block-title text-white mb-30">Ready to Collaborate?</h3>
+            <h3 class="block-title text-white mb-30">{{ cta_content.title }}</h3>
             <p class="text-white mb-40">
-              We welcome partners, researchers, and clients who want to shape
-              the future of automation with us.
+              {{ cta_content.body_text }}
             </p>
-            <a href="/contact/" class="btn btn-outline-light m-1"
-              >Contact Us</a
+            {% for button in cta_buttons %}
+            <a href="{{ button.button_url }}" class="btn btn-outline-light m-1"
+              >{{ button.button_text }}</a
             >
-            <a href="#" class="btn btn-outline-light m-1">Request Demo</a>
-            <a href="#" class="btn btn-outline-light m-1">Join Our Team</a>
+            {% endfor %}
           </div>
         </div>
+        {% endif %}
       </div>
       <!-- Content Body End -->
 

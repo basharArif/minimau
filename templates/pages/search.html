@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-body bg-grey section custom-scroll">
+    <div class="product-hero-title section pt-120 pb-60 text-center" style="background-image: url({% static 'images/bg/title-bg-1.png' %}); background-size: cover; background-position: center;">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-dark">Search</h1>
+        </div>
+    </div>
+    <div class="section-wrap section pt-120 pb-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10 col-12">
+                    <div class="search-form-wrap text-center">
+                        <form action="#" method="get">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search..." name="q">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="search-results mt-5">
+                        <!-- Search results will be displayed here -->
+                        <p class="text-muted text-center">Enter your query above to find relevant content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

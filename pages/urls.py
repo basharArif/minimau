@@ -1,48 +1,34 @@
 from django.urls import path
+from django.views.generic import TemplateView # Import TemplateView
 
-from .views import StaticTemplateView
+app_name = 'pages'
+
+from .views import (
+    HomeView,
+    ProductDetailView,
+    ServiceView,
+    ServiceDetailView,
+    AboutView,
+    SearchView,
+)
 
 urlpatterns = [
-    path("", StaticTemplateView.as_view(template_name="pages/index.html"), name="home"),  # noqa: E501
-    path(
-        "about/",
-        StaticTemplateView.as_view(template_name="pages/about.html"),
-        name="about",
-    ),
-    path(
-        "contact/",
-        StaticTemplateView.as_view(template_name="pages/contact.html"),
-        name="contact",
-    ),
-    path(
-        "service/",
-        StaticTemplateView.as_view(template_name="pages/service.html"),
-        name="service",
-    ),
-    path(
-        "team/",
-        StaticTemplateView.as_view(template_name="pages/team.html"),
-        name="team",
-    ),
-    path(
-        "blog/",
-        StaticTemplateView.as_view(template_name="pages/blog-three-column.html"),  # noqa: E501
-        name="blog",
-    ),
-    path(
-        "blog/post/",
-        StaticTemplateView.as_view(
-            template_name="pages/blog-details-left-sidebar.html"
-        ),
-        name="blog-post",
-    ),
+    path("", HomeView.as_view(), name="home"),
+    path("about/", AboutView.as_view(), name="about"),
+    path("contact/", TemplateView.as_view(template_name="pages/contact.html"), name="contact"),
+    path("service/", ServiceView.as_view(), name="service"),
+    path("service/<slug:url_slug>/", ServiceDetailView.as_view(), name="service_detail"),
+    path("search/", SearchView.as_view(), name="search"),
+    path("team/", TemplateView.as_view(template_name="pages/team.html"), name="team"),
+    path("blog/", TemplateView.as_view(template_name="pages/blog-three-column.html"), name="blog"),
+    path("products/<str:url_slug>/", ProductDetailView.as_view(), name="product_detail"),
 ]
 
-for i in range(1, 7):
-    urlpatterns.append(
-        path(
-            f"products/{i}/",
-            StaticTemplateView.as_view(template_name=f"pages/product{i}.html"),
-            name=f"product-{i}",
-        )
+# 404 page
+urlpatterns.append(
+    path(
+        "404/",
+        TemplateView.as_view(template_name="pages/404.html"),
+        name="404",
     )
+)

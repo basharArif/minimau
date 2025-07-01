@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Server Error{% endblock %}
+
+{% block content %}
+<section class="error-page section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <img src="/static/images/404.png" alt="500 Error" class="img-fluid mb-4">
+                <h2 class="mb-3">500 - Server Error</h2>
+                <p class="mb-4">Oops! Something went wrong on our end. We're working to fix it.</p>
+                <a href="{% url 'home' %}" class="btn btn-primary">Go to Homepage</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

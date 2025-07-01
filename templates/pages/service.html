@@ -10,184 +10,33 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-8 text-center mb-80">
-          <h2 class="block-title display-4 fw-bold">Our Services</h2>
+          <h2 class="block-title display-4 fw-bold text-dark">{{ hero_content.title }}</h2>
           <p class="lead text-muted mt-3">
-            Explore our comprehensive suite of robotics, AI, and automation offerings tailored to future-focused industries.
+            {{ hero_content.subtitle }}
           </p>
         </div>
 
-        <!-- Robotics Services -->
-        <div class="col-12 mb-40">
-          <h3 class="block-title h3 fw-semibold">Robotics Services</h3>
-        </div>
+        <!-- Service Cards -->
+        <div class="col-12">
+          <div class="row">
 
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="https://images.unsplash.com/photo-1617703703678-eca4271a2068?auto=format&fit=crop&w=800&q=80" alt="Turnkey Robotic Deployments" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M3 3h6v6H3V3zm12 0h6v6h-6V3zM3 15h6v6H3v-6zm12 0h6v6h-6v-6zM8 8h8v8H8V8z"/>
-              </svg>
+            {% for service in services %}
+            <div class="col-md-6 col-lg-4 mb-40">
+              <a href="{% url 'service_detail' url_slug=service.url_slug %}" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
+                <img src="{% static service.image %}" alt="{{ service.image_alt_text }}" class="img-fluid rounded mb-3">
+                <h4 class="h5 fw-bold">{{ service.name }}</h4>
+                <p class="text-muted">{{ service.short_description }}</p>
+              </a>
             </div>
-            <h4 class="h5 fw-bold">Turnkey Robotic Deployments</h4>
-            <p class="text-muted">Full-cycle setup of UAVs and UGVs tailored to your operational needs across field and industry use cases.</p>
-          </a>
-        </div>
+            {% endfor %}
 
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="https://images.unsplash.com/photo-1656430713460-889bd03a5648?auto=format&fit=crop&w=800&q=80" alt="Robodogs for Inspection & Security" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4 13l1.41-1.41L11 17.17l7.59-7.59L20 11l-9 9-7-7z"/>
-              </svg>
-            </div>
-            <h4 class="h5 fw-bold">Robodogs for Inspection & Security</h4>
-            <p class="text-muted">Deploy quadrupeds with LiDAR, thermal, and live video for patrolling, industrial inspection, and disaster zones.</p>
-          </a>
-        </div>
-
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="https://images.unsplash.com/photo-1618477388954-4577e8a10d61?auto=format&fit=crop&w=800&q=80" alt="Robotic Fleet Coordination" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M10 3H3v7h7V3zm11 0h-7v7h7V3zM3 14h7v7H3v-7zm11 0h7v7h-7v-7z"/>
-              </svg>
-            </div>
-            <h4 class="h5 fw-bold">Robotic Fleet Coordination</h4>
-            <p class="text-muted">Cloud dashboard for real-time path planning and mission control across multiple robot deployments.</p>
-          </a>
-        </div>
-
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="https://images.unsplash.com/photo-1630471023180-7781ad83de8a?auto=format&fit=crop&w=800&q=80" alt="Robotics-as-a-Service" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/>
-              </svg>
-            </div>
-            <h4 class="h5 fw-bold">Robotics-as-a-Service (RaaS)</h4>
-            <p class="text-muted">Access robots on-demand with included training, support, analytics, and cloud platform features.</p>
-          </a>
-        </div>
-
-        <!-- AI Services -->
-        <div class="col-12 mt-80 mb-40">
-          <h3 class="block-title h3 fw-semibold">AI Services</h3>
-        </div>
-
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="https://images.unsplash.com/photo-1581093588401-9cbb33843c84?auto=format&fit=crop&w=800&q=80" alt="Computer Vision" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M1 5h22v2H1zm0 6h22v2H1zm0 6h22v2H1z"/>
-              </svg>
-            </div>
-            <h4 class="h5 fw-bold">Computer Vision</h4>
-            <p class="text-muted">Object detection, classification, and segmentation from camera feeds, thermal images, or RGB sources.</p>
-          </a>
-        </div>
-
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=800&q=80" alt="Predictive Analytics" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
-              </svg>
-            </div>
-            <h4 class="h5 fw-bold">Predictive Analytics</h4>
-            <p class="text-muted">Forecast yields, detect defects, and plan maintenance using AI models trained on your data.</p>
-          </a>
-        </div>
-
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="https://images.unsplash.com/photo-1622640441213-6da06a5c2441?auto=format&fit=crop&w=800&q=80" alt="Video Intelligence" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M10 8v8l6-4-6-4z"/>
-              </svg>
-            </div>
-            <h4 class="h5 fw-bold">Real-Time Video Intelligence</h4>
-            <p class="text-muted">AI-powered video surveillance, crowd tracking, and anomaly detection for smart cities and industry.</p>
-          </a>
-        </div>
-
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="https://images.unsplash.com/photo-1617279860579-5b8b8b0e4f11?auto=format&fit=crop&w=800&q=80" alt="Sensor Fusion" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"/>
-              </svg>
-            </div>
-            <h4 class="h5 fw-bold">Sensor Fusion & Edge AI</h4>
-            <p class="text-muted">Combine RTK, IMU, LiDAR, and vision into real-time control models running directly on the robot.</p>
-          </a>
-        </div>
-
-        <!-- Robotics Rentals -->
-        <div class="col-12 mt-80 mb-40">
-          <h3 class="block-title h3 fw-semibold">Robotics Rentals</h3>
-        </div>
-
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="https://images.unsplash.com/photo-1632837989241-1a58b54e1d7f?auto=format&fit=crop&w=800&q=80" alt="Robodog Rentals" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4 4h16v16H4z"/>
-              </svg>
-            </div>
-            <h4 class="h5 fw-bold">Robodog Rentals</h4>
-            <p class="text-muted">Rent high-mobility robotic dogs for inspection, training, R&D, or demo purposes—short and long term.</p>
-          </a>
-        </div>
-
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="https://images.unsplash.com/photo-1618221194087-1c7313ab9ff2?auto=format&fit=crop&w=800&q=80" alt="UAV Rentals" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l9 21H3L12 2z"/>
-              </svg>
-            </div>
-            <h4 class="h5 fw-bold">UAV Rentals</h4>
-            <p class="text-muted">Access professional-grade drones with multispectral, RGB, and LiDAR payloads for testing and surveys.</p>
-          </a>
-        </div>
-
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="https://images.unsplash.com/photo-1643891634782-0fc7505b8ac3?auto=format&fit=crop&w=800&q=80" alt="Training & Monitoring" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"/>
-              </svg>
-            </div>
-            <h4 class="h5 fw-bold">Training & Monitoring</h4>
-            <p class="text-muted">All rental packages come with optional on-site training and real-time dashboard access.</p>
-          </a>
-        </div>
-
-        <div class="service-item col-md-6 col-lg-4 mb-40">
-          <a href="#" class="service-card d-block p-4 bg-white shadow-sm rounded h-100 text-decoration-none text-dark transition-all">
-            <img src="/static/images/leafloat.jpg" alt="Flexible Rentals" class="img-fluid rounded mb-3">
-            <div class="mb-3 text-primary">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M5 3h14v18H5z"/>
-              </svg>
-            </div>
-            <h4 class="h5 fw-bold">Flexible Rental Packages</h4>
-            <p class="text-muted">Custom packages for pilot studies, research trials, exhibitions, or temporary field work.</p>
-          </a>
+          </div>
         </div>
 
       </div>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </div>

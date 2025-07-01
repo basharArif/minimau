@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-body bg-grey section custom-scroll">
+        <div class="product-hero-title section pt-120 pb-60 text-center" style="background-image: url({% static 'images/bg/title-bg-1.png' %}); background-size: cover; background-position: center;">
+          <div class="container">
+            <h1 class="display-4 fw-bold text-dark">Nature Digitization: AI-Powered Tree & Fruit Classification</h1>
+          </div>
+        </div>
+        <div
+          class="section-wrap section pt-120 pt-lg-80 pt-md-80 pt-sm-80 pt-xs-50 pb-120 pb-lg-80 pb-md-80 pb-sm-80 pb-xs-50"
+        >
+          <div class="container">
+            <div class="row">
+              <!-- Service Details -->
+              <div class="col-lg-12 col-12">
+                <div class="row">
+                  <!-- Service Image Column (Placeholder for now, can be added later if suitable image found) -->
+                  <div class="col-lg-7 col-12 mb-sm-30 mb-xs-30">
+                    <img src="{% static 'images/products/product5.png' %}" alt="Nature Digitization" class="img-fluid rounded mb-4">
+                  </div>
+
+                  <!-- Service Content Column -->
+                  <div class="col-lg-5 col-12">
+                    <p>Leafloat Robotics is revolutionizing precision agriculture with AI-powered solutions for fruit tree detection, classification, and yield estimation, integrating deep learning, computer vision, and 3D mapping for smarter orchard management.</p>
+
+                    <h3 class="mt-4">Key Features</h3>
+                    <ul>
+                      <li><strong>Tree & Fruit Detection/Classification</strong>: Deep learning for real-time identification of tree species, growth stages, fruit types, ripeness, and quality, with high accuracy in dense environments.</li>
+                      <li><strong>3D Mapping & Digital Twins</strong>: LiDAR and photogrammetry for orchard modeling and canopy analysis.</li>
+                      <li><strong>Yield Estimation & Growth Monitoring</strong>: AI-driven fruit counting and harvest prediction.</li>
+                      <li><strong>Health Monitoring</strong>: Multispectral/hyperspectral imaging for early disease, pest, and nutrient deficiency detection.</li>
+                      <li><strong>Autonomous Data Collection</strong>: UAVs/UGVs for automated scanning and cloud-based analytics.</li>
+                      <li><strong>Conveyor-Based Sorting</strong>: High-speed AI classification for defect detection and quality control.</li>
+                    </ul>
+
+                    <h3 class="mt-4">Applications</h3>
+                    <ul>
+                      <li><strong>Precision Agriculture</strong>: Automated tree/fruit classification and disease monitoring.</li>
+                      <li><strong>Smart Orchard Management</strong>: Real-time growth tracking and resource optimization.</li>
+                      <li><strong>Supply Chain Optimization</strong>: Yield forecasting and automated sorting for efficient logistics.</li>
+                    </ul>
+
+                    <h3 class="mt-4">Competitive Advantages</h3>
+                    <ul>
+                      <li>Superior accuracy in detection and classification.</li>
+                      <li>Eliminates labor-intensive manual processes.</li>
+                      <li>Scalable for various farm sizes and tree types.</li>
+                      <li>Promotes sustainable, resource-efficient farming.</li>
+                    </ul>
+
+                    <h3 class="mt-4">Future Developments</h3>
+                    <ul>
+                      <li>AI models for climate impact assessment on fruit production.</li>
+                      <li>Multi-sensor fusion for enhanced mapping accuracy.</li>
+                      <li>Integration with robotic harvesting systems.</li>
+                    </ul>
+
+                    <p class="mt-4">Our AI-driven solutions digitize nature, empowering farmers with precise insights for optimized yield, sustainability, and food security.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

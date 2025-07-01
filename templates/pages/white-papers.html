@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-body bg-grey section custom-scroll">
+    <div class="product-hero-title section pt-120 pb-60 text-center" style="background-image: url({% static 'images/bg/blog-hero.png' %}); background-size: cover; background-position: center;">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-dark">White Papers & Guides</h1>
+        </div>
+    </div>
+    <div class="section-wrap section pt-120 pt-lg-80 pt-md-80 pt-sm-80 pt-xs-50 pb-120 pb-lg-80 pb-md-80 pb-sm-80 pb-xs-50">
+        <div class="container">
+            <div class="row">
+                {% for white_paper in white_papers %}
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ white_paper.title }}</h5>
+                            <p class="card-text">{{ white_paper.short_description }}</p>
+                            <a href="{{ white_paper.file.url }}" class="btn btn-primary" target="_blank">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12 text-center">
+                    <p class="lead">No white papers available at the moment. Please check back later.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

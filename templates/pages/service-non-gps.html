@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-body bg-grey section custom-scroll">
+        <div class="product-hero-title section pt-120 pb-60 text-center" style="background-image: url({% static 'images/bg/title-bg-1.png' %}); background-size: cover; background-position: center;">
+          <div class="container">
+            <h1 class="display-4 fw-bold text-dark">Non-GPS Navigation</h1>
+          </div>
+        </div>
+        <div
+          class="section-wrap section pt-120 pt-lg-80 pt-md-80 pt-sm-80 pt-xs-50 pb-120 pb-lg-80 pb-md-80 pb-sm-80 pb-xs-50"
+        >
+          <div class="container">
+            <div class="row">
+              <!-- Service Details -->
+              <div class="col-lg-12 col-12">
+                <div class="row">
+                  <!-- Service Image Column (Placeholder for now, can be added later if suitable image found) -->
+                  <div class="col-lg-7 col-12 mb-sm-30 mb-xs-30">
+                    <img src="{% static 'images/products/product4.png' %}" alt="Non-GPS Navigation" class="img-fluid rounded mb-4">
+                  </div>
+
+                  <!-- Service Content Column -->
+                  <div class="col-lg-5 col-12">
+                    <p>Leafloat Robotics’ non-GPS navigation solutions enable drones and ground vehicles to operate in GPS-denied environments like forests, tunnels, and urban areas using RTK positioning, visual sensors, and AI-driven sensor fusion.</p>
+
+                    <h3 class="mt-4">Key Technologies</h3>
+                    <ul>
+                      <li><strong>RTK-Based Positioning</strong>: Centimeter-level accuracy using ground-based stations.</li>
+                      <li><strong>Visual Odometry & SLAM</strong>: AI-powered visual processing for real-time navigation and mapping.</li>
+                      <li><strong>LiDAR & Depth Sensing</strong>: 3D environment perception and obstacle avoidance.</li>
+                      <li><strong>Inertial Navigation System (INS)</strong>: Combines IMU with RTK and visual odometry for stability.</li>
+                      <li><strong>AI-Powered Decision Making</strong>: Adaptive navigation and error correction in unknown environments.</li>
+                    </ul>
+
+                    <h3 class="mt-4">Applications</h3>
+                    <ul>
+                      <li><strong>Agricultural Drones/UGVs</strong>: Precision navigation in dense plantations.</li>
+                      <li><strong>Construction & Warehouses</strong>: Indoor navigation for material transport and inventory tracking.</li>
+                      <li><strong>Search & Rescue</strong>: Navigation in GPS-denied disaster zones.</li>
+                      <li><strong>Defense & Security</strong>: Tactical navigation in urban or jammed environments.</li>
+                    </ul>
+
+                    <h3 class="mt-4">Competitive Advantages</h3>
+                    <ul>
+                      <li>GPS-independent navigation for challenging environments.</li>
+                      <li>High-precision RTK-based localization.</li>
+                      <li>Robust AI-driven obstacle avoidance.</li>
+                      <li>Scalable across drones and ground vehicles.</li>
+                    </ul>
+
+                    <h3 class="mt-4">Future Developments</h3>
+                    <ul>
+                      <li>Enhanced SLAM for long-term positioning accuracy.</li>
+                      <li>Swarm navigation for multi-robot collaboration.</li>
+                      <li>UWB and radar integration for added precision.</li>
+                    </ul>
+
+                    <p class="mt-4">Our non-GPS navigation solutions redefine autonomous mobility in GPS-restricted environments, ensuring reliable operation in complex terrains.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

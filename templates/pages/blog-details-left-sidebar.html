@@ -13,32 +13,23 @@
                             <div class="blog-item-details">
 
                                 <!-- Image -->
-                                <div class="blog-image"><img src="{% static 'images/blog/blog-single.jpg' %}" alt=""></div>
+                                <div class="blog-image"><img src="{{ blog_post.image.url }}" alt="{{ blog_post.image_alt_text }}"></div>
 
                                 <!-- Content -->
                                 <div class="blog-content">
 
                                     <!-- Title -->
-                                    <h2 class="blog-title">HOW I IMPROVE DESIGN ONE EASY</h2>
+                                    <h2 class="blog-title text-dark">{{ blog_post.title }}</h2>
 
                                     <!-- Meta -->
                                     <ul class="blog-meta">
-                                        <li><a href="#"><i class="fa fa-user"></i>Admin</a></li>
-                                        <li><a href="#"><i class="fa fa-comments"></i>Comments ( 04 )</a></li>
+                                        <li><a href="#"><i class="fa fa-user"></i>{{ blog_post.author }}</a></li>
+                                        <li><a href="#"><i class="fa fa-calendar"></i>{{ blog_post.publish_date|date:"F d, Y" }}</a></li>
                                     </ul>
 
                                     <!-- Description -->
                                     <div class="blog-desc">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour lebmid. There are many variations of passages of Lorem Ipsum available,
-                                            but the majority have suffered alteration in some form, by injected humour lebmid</p>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour lebmid. There are many variations of passages of Lorem Ipsum available,
-                                            but the majority have suffered lebmid</p>
-                                        <blockquote>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable or randomised.
-                                                words which don't look even slightly</p>
-                                        </blockquote>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour lebmid. There are many variations of passages of Lorem Ipsum available,
-                                            but the majority have suffered lebmid</p>
+                                        {{ blog_post.content|safe }}
                                     </div>
 
                                 </div>
@@ -49,10 +40,9 @@
 
                                         <!-- Socail -->
                                         <div class="blog-social-share d-flex justify-content-center col-md-6 col-12 order-1 order-md-2 mb-xs-20">
-                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-facebook-f"></i></a>
                                             <a href="#"><i class="fa fa-twitter"></i></a>
-                                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin-in"></i></a>
                                         </div>
 
                                         <!-- Post Nav -->
@@ -82,9 +72,9 @@
                                         <div class="single-comment">
                                             <div class="image"><img src="{% static 'images/blog/comment-1.jpg' %}" alt=""></div>
                                             <div class="content fix">
-                                                <h5>Andrew Cruz</h5>
-                                                <span>july 25, 2019 at 2:35 am</span>
-                                                <p>random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                                                <h5>AI Enthusiast</h5>
+                                                <span>June 26, 2025 at 10:30 am</span>
+                                                <p>Fascinating insights into the practical applications of Robodogs! How do they handle extreme weather conditions?</p>
                                             </div>
                                             <div class="reply"><a href="#"><i class="fa fa-reply"></i>reply</a></div>
                                         </div>
@@ -95,9 +85,9 @@
                                                 <div class="single-comment">
                                                     <div class="image"><img src="{% static 'images/blog/comment-2.jpg' %}" alt=""></div>
                                                     <div class="content fix">
-                                                        <h5>Frank Foster</h5>
-                                                        <span>july 31, 2019 at 4:39 am</span>
-                                                        <p>random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                                                        <h5>Leafloat Team</h5>
+                                                        <span>June 26, 2025 at 11:00 am</span>
+                                                        <p>Our Robodogs are designed with robust, weather-resistant chassis to operate effectively in diverse environmental conditions, including rain, dust, and varying temperatures. Specific models offer enhanced protection for more extreme climates.</p>
                                                     </div>
                                                     <div class="reply"><a href="#"><i class="fa fa-reply"></i>reply</a></div>
                                                 </div>
@@ -110,9 +100,9 @@
                                         <div class="single-comment">
                                             <div class="image"><img src="{% static 'images/blog/comment-3.jpg' %}" alt=""></div>
                                             <div class="content fix">
-                                                <h5>Bruce Burke</h5>
-                                                <span>july 15, 2019 at 2:39 am</span>
-                                                <p>random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                                                <h5>Industry Observer</h5>
+                                                <span>June 27, 2025 at 09:15 am</span>
+                                                <p>This is truly groundbreaking. What kind of training is involved for personnel to operate and maintain these Robodogs?</p>
                                             </div>
                                             <div class="reply"><a href="#"><i class="fa fa-reply"></i>reply</a></div>
                                         </div>
